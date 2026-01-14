@@ -1,0 +1,116 @@
+
+                                                    <!-- Gewidmet Inga H., Lebensretterin und geliebte Ehefrau. Imperiale Grüße, Für das Imperium und lang lebe der Imperator! --> 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#000000">
+  <title>Pocket Hornet - Bavarian Wood Edition</title>
+  <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #020202;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      overscroll-behavior: none;
+      -webkit-tap-highlight-color: transparent;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+    .font-sci-fi {
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    /* TRON GRID BACKGROUND */
+    .tron-bg {
+      position: relative;
+      background-color: #020202;
+      overflow: hidden;
+    }
+    
+    .tron-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* Seamless Hexagon SVG Pattern in Gato Blue */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%230098d4' stroke-width='1' stroke-opacity='1'/%3E%3C/svg%3E");
+      background-size: 56px 98px;
+      opacity: 0.1;
+      /* Slow flow + subtle pulse */
+      animation: tron-flow 45s linear infinite, tron-pulse 10s ease-in-out infinite;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Depth Gradient */
+    .tron-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(2, 2, 2, 0.9) 100%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes tron-flow {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 98px; }
+    }
+
+    @keyframes tron-pulse {
+      0%, 100% { opacity: 0.05; filter: brightness(0.8); }
+      50% { opacity: 0.15; filter: brightness(1.2); }
+    }
+
+    .glass-panel {
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    .hornet-green {
+      color: #22c55e;
+      text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+    }
+    .bavarian-blue {
+      color: #0098d4;
+      text-shadow: 0 0 10px rgba(0, 152, 212, 0.5);
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    @keyframes pulse-bavarian {
+      0%, 100% { filter: drop-shadow(0 0 2px rgba(0, 152, 212, 0.3)); }
+      50% { filter: drop-shadow(0 0 10px rgba(0, 152, 212, 0.6)); }
+    }
+    .animate-pulse-bavarian {
+      animation: pulse-bavarian 3s infinite;
+    }
+    /* Verhindert Pull-to-refresh auf Android Chrome */
+    html {
+      overscroll-behavior-y: contain;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+<body class="tron-bg h-full w-full">
+  <div id="root" class="h-full w-full"></div>
+</body>
+</html>
